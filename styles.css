@@ -1,0 +1,315 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&family=Work+Sans:wght@300;400;500;700&display=swap');
+
+:root {
+  /*Colors*/
+  --c-1: #00beef;
+  --c-2: #636363;
+  --c-3: #4c4c4c;
+  --c-4: #f1edee;
+  --c-5: #fffffa;
+
+  /*Fonts*/
+  --f-style: 'Work Sans', sans-serif;
+  --f-style-code: 'Fira Code', monospace;
+  --f-line: 1.4em;
+  --f-xl: 3em;
+  --f-l: 2.1em;
+  --f-m: 1em;
+  --f-s: 0.8em;
+
+  /*Layout*/
+  --p-1: 0.5em;
+  --p-2: 1em;
+  --p-3: 1.5em;
+  --p-4: 2em;
+
+  --m-1: 0.5em;
+  --m-2: 1em;
+  --m-3: 1.5em;
+  --m-4: 2em;
+
+  /*Sizing*/
+  --nav-bar-h: 80px;
+
+}
+
+/*Reset*/
+*,
+::before,
+::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/*Basic Styles*/
+body {
+  width: 100vw;
+  height: 100vh;
+  font-family: var(--f-style);
+  overflow-x: hidden;
+  /* Prevents the screen from scrolling to the hidden content */
+  display: flex;
+  flex-direction: row;
+}
+
+img {
+  max-width: 100%;
+  margin: var(--m-1) 0;
+}
+
+pre,
+code {
+  color: var(--c-4);
+  background-color: #4c4c4c;
+  padding: 0 var(--p-1);
+}
+
+code {
+  font-family: var(--f-style-code);
+  font-size: var(--f-s);
+  line-height: 2em;
+}
+
+/*Navigation*/
+
+.nav-wrapper {
+  width: 30vw;
+  height: 100vh;
+  z-index: 1;
+  padding: var(--p-4);
+  background-color: var(--c-1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+}
+
+.logo {
+  width: auto;
+  height: 3em;
+}
+.logo-text{
+  text-align: center;
+  color: var(--c-5);
+  font-size: var(--f-s);
+  letter-spacing: var(--f-line);
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 100%;
+  width: 100%;
+}
+
+.nav-links li {
+  list-style: none;
+}
+
+.nav-links a {
+  font-weight: 600;
+  color: var(--c-4);
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  color: var(--c-3);
+}
+
+/* Burger */
+.burger {
+  display: none;
+}
+
+.burger div {
+  width: 25px;
+  height: 2px;
+  background-color: var(--c-4);
+  margin: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+
+/*Sections*/
+#main-doc {
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding: var(--p-4);
+}
+
+.main-section {
+  margin: 0 var(--m-4);
+  padding: 0 var(--p-1);
+}
+
+.section-sub-heading {
+  font-weight: 400;
+  font-size: var(--f-l);
+  margin: var(--m-2) 0;
+}
+
+.section-title {
+  font-weight: 600;
+  font-size: var(--f-xl);
+  margin: var(--m-2) 0;
+}
+
+.section-content {
+  margin-bottom: var(--m-1);
+}
+
+.header-bar {
+  font-size: var(--f-xl);
+  text-align: center;
+  color: var(--c-1);
+}
+
+
+.document-title {
+  font-size: var(--f-l);
+  margin-bottom: var(--m-1);
+}
+
+.document-description,
+.section-content,
+.list-item {
+  font-size: var(--f-m);
+  font-style: var(--f-style);
+  line-height: var(--f-line);
+}
+
+.code-block {
+  background-color: var(--c-3);
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: var(--m-1) 0;
+  z-index: 0;
+}
+
+.code-content {
+  transform: translateX(-20px);
+}
+
+.code-name {
+
+  font-size: var(--f-s);
+  color: var(--c-1);
+  padding-right: var(--p-2);
+  z-index: 10;
+}
+
+.content-note {
+  background-color: var(--c-4);
+  border-left: 10px solid var(--c-1);
+  margin: var(--m-1) 0;
+  padding: var(--p-2);
+}
+
+.content-bold {
+  font-weight: 700;
+}
+
+.section-list {
+  padding-left: var(--p-4);
+  margin: var(--m-1) 0;
+}
+
+.list-item {
+  margin: var(--m-1);
+}
+
+
+/*Tablet / Mobile*/
+@media screen and (max-width: 768px) {
+  body {
+    width: 100vw;
+    height: 100vh;
+    font-family: var(--f-style);
+    overflow-x: hidden;
+    /* Prevents the screen from scrolling to the hidden content */
+    display: flex;
+    flex-direction: column;
+  }
+
+  .main-section {
+    margin: var(--m-4);
+    padding: var(--p-1);
+  }
+
+  .nav-wrapper {
+    width: 100vw;
+    height: var(--nav-bar-h);
+    min-height: 8vh;
+    background-color: var(--c-1);
+    padding: 0 var(--p-2);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-links {
+    position: absolute;
+    left: 0px;
+    height: 92vh;
+    top: 7vh;
+    background-color: var(--c-1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    z-index: 1;
+    /* Full screen navigation, 50% for less, etc...*/
+    transform: translateX(-100%);
+    /* Hidden off to the side and will slide in when the class changes via JS and CSS*/
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .nav-links li {
+    opacity: 0;
+  }
+
+  .burger {
+    display: block;
+    cursor: pointer;
+  }
+}
+
+.nav-active {
+  transform: translateX(0%);
+  /* This will be used to move the item back on screen */
+}
+
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+/* Burger Menu Animations*/
+.toggle .line1 {
+  transform: rotate(-45deg) translate(-5px, 5px);
+}
+
+.toggle .line2 {
+  opacity: 0;
+}
+
+.toggle .line3 {
+  transform: rotate(45deg) translate(-5px, -5px);
+}
